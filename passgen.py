@@ -11,7 +11,7 @@ def save_password_to_file(password, password_file="./passwords.txt"):
     Defaults to writing to passwords.txt in current dir
     """
     try:
-        with open(password_file, "a") as f:
+        with open(password_file, "a", encoding="utf-8") as f:
             f.write(password)
     except Exception as e:
         print(e)
@@ -23,7 +23,7 @@ def print_passwords_from_file(password_file="./passwords.txt"):
     Defaults to passwords.txt in current dir
     """
     try:
-        with open(password_file, "r") as f:
+        with open(password_file, "r", encoding="utf-8") as f:
             for line in f:
                 print(line)
     except Exception as e:
