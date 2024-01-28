@@ -9,7 +9,7 @@ import secrets
 import argparse
 
 
-def save_password_to_file(password_to_write, password_file=None):
+def save_password_to_file(password_to_write: str, password_file: str = None):
     """
     Writes the generated password into the given file
     Defaults to writing to passwords.txt in current dir
@@ -56,7 +56,6 @@ def generate_valid_characters(**kwargs) -> str:
             valid_characters += scandic_characters_dk_no
         elif kwargs["scandics"] == "SEFI":
             valid_characters += scandic_characters_fi_se
-    print(valid_characters)
     return valid_characters
 
 
