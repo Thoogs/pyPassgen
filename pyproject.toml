@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyPassgen"
+authors = [
+{name = "Teemu 'Thoogs' Mahlamäki", email = "thoogs@pm.me"}
+]
+description = "Password generator for arbitrary length passwords."
+requires-python = ">= 3.8"
+readme = "README.md"
+version = "0.8"
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "pytest",
+]
