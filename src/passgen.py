@@ -8,6 +8,11 @@ import string
 import secrets
 import argparse
 
+from constants import (
+        SCANDIC_SE_FI,
+        SCANDIC_NO_DK
+        )
+
 
 def save_password_to_file(password_to_write: str, password_file: str = None):
     """
@@ -45,17 +50,14 @@ def generate_valid_characters(**kwargs) -> str:
 
     # We assume that ascii characters and numbers are always valid.
     valid_characters = string.ascii_letters + string.digits
-    # Define the scandic character sets
-    scandic_characters_fi_se = "öäåÖÄÅ"
-    scandic_characters_dk_no = "øæåÆØÅ"
 
     if "punctuation" in kwargs and kwargs["punctuation"] is True:
         valid_characters += string.punctuation
     if "scandics" in kwargs:
         if kwargs["scandics"] == "NODK":
-            valid_characters += scandic_characters_dk_no
+            valid_characters += SCANDIC_NO_DK
         elif kwargs["scandics"] == "SEFI":
-            valid_characters += scandic_characters_fi_se
+            valid_characters += SCANDIC_SE_FI
     return valid_characters
 
 
