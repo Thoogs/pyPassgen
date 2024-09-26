@@ -32,7 +32,7 @@ def save_password_to_file(password_to_write: str, password_file: str = None):
         password_file = "./passwords.txt"
     try:
         with open(password_file, "a", encoding="utf-8") as f:
-            f.write(password_to_write)
+            f.write(password_to_write + "\n")
     except Exception as e:
         # If we for some reason cannot write, print the error to terminal
         print(e)
